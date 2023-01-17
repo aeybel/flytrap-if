@@ -1,0 +1,341 @@
+"Defeat the Man-Eating Flytrap!" by Alanna Eybel
+
+Use the serial comma, full-length room descriptions and no scoring.
+
+The story description is "A short interactive game about giant man-eating flytraps."
+
+Release along with an interpreter. Release along with the source text. 
+
+Include Menus by Emily Short.
+
+When play begins, say "All you wanted was that damned taco. And now you're stuck in here with a giant man-eating flytrap blocking your exit.[paragraph break][italic type]Players new to [story title] or interactive fiction shoult type ABOUT[roman type]."
+
+Chapter 1 -- Room of the Flytrap
+
+The Room of the Flytrap is a room. The description of the Room of the Flytrap is "The room is mostly plain and empty. A casual-looking cabinet slumps against one wall[if the cabinet is open], containing the entrance west into the hidden room,[end if] and a comfy-looking sofa sits in the middle of the room to the east."
+
+The giant man-eating flytrap is an animal in the Room of the Flytrap. "[if the giant man-eating flytrap is alive]A giant man-eating flytrap hovers above the couch, blocking the way out![otherwise]The corpse of the former giant man-eating flytrap lays on the ground, showing the way to your exit east." Understand "trap" or "venus" or "venus flytrap" as the giant man-eating flytrap. The description of the giant man-eating flytrap is "[if the giant man-eating flytrap is alive]A giant flytrap which looks like it could swallow you whole![otherwise]A once giant man-eating flytrap, which is now no longer threatening, only a corpse at your feet." The giant man-eating flytrap can be dead or alive. The giant man-eating flytrap is alive.
+
+The flytrap's head is part of the flytrap. Understand "heads" as the flytrap's head. The description of the flytrap's head is "The heads are large enough to eat a human whole!"
+
+Instead of taking the flytrap's head when the giant man-eating flytrap is alive, say "Good luck with that! You'd have to be a little too close for comfort to do that!"
+
+Instead of taking the flytrap's head:
+	say "Hurrah! You slice a head off of the giant man-eating flytrap and decide to keep it as a souvenir.";
+	now the player has the flytrap's head.
+
+Instead of taking the giant man-eating flytrap, try taking the flytrap's head.
+
+Instead of attacking the giant man-eating flytrap:
+	if the giant man-eating flytrap is alive:
+		say "You run towards the flytrap[if the player has the shiny sword], sword in hand,[end if] and lunge at it. Unfortunately, the flytrap is very large and captures you in its mouth. Then it eats you. Maybe attacking it head on wasn't the best idea.";
+		end the story saying "You have been eaten by the flytrap.";
+	otherwise:
+		say "You take a stab at the flytrap just for fun, but killing things just isn't as fun when they're already dead."
+
+Instead of giving something to the giant man-eating flytrap:
+	if the flytrap is alive:
+		say "Getting that close to the giant man-eating flytrap seems like a bad idea to you.";
+	otherwise:
+		say "You don't seriously expect a dead flytrap to take that, do you?".
+
+After asking the giant man-eating flytrap about, say "You mutter to the giant man-eating flytrap, but there is no response."
+
+The casual-looking cabinet is an openable closed container in the Room of the Flytrap. The casual-looking cabinet is scenery. Understand "cupboard" as the cabinet. The description of the casual-looking cabinet is "A wooden cabinet trying to look inconspicuous against the wall.[if open] But you know better. It contains the entrance west into the hidden room![end if]"
+
+After opening the casual-looking cabinet for the first time:
+	say "You pull open the cabinet doors and find a hidden entrance that leads west to a hidden room!".
+
+Instead of closing the casual-looking cabinet:
+	if the casual-looking cabinet is closed:
+		say "That's already closed";
+	otherwise:
+		say "Why block off your way back to the hidden room?".
+
+Instead of going west in the Room of the Flytrap when the casual-looking cabinet is closed, say "You can't go that way."
+
+Instead of entering the cabinet, try going west.
+
+The comfy-looking sofa is enterable supporter in the Room of the Flytrap. The comfy-looking sofa is scenery. Understand "couch" as the comfy-looking sofa. The description of the comfy-looking sofa is "A sofa sitting under the flytrap that looks absolutely comfortable![unless the player is on the sofa] It's almost [italic type]begging[roman type] you to sit on it."
+
+After entering the comfy-looking sofa:
+	say "You take a seat on the sofa. It's as comfy as you thought it would be!".
+
+Every turn when the player is on the sofa:
+	if the player has been on the sofa for five turns:
+		say "The flytrap finally decides to lean down and check you out. You happen to smell good enough for its tastes, and be in the perfect position for it to eat you. So it does.";
+		end the story saying "You have been eaten by the flytrap";
+	otherwise:
+		say "[one of]You're feeling a bit uneasy sitting on the sofa right underneath the flytrap.[or]The flytrap stares at you, and you swear it looks hungry.[or]You sink back in the sofa and you swear you see the flytrap inch a bit closer.[or]A shudder runs through your spine. Maybe it has something to do with the flytrap hovering over you.[or]You catch a whiff of a weird scent. It smells kind of like dead flies and flesh.[purely at random]"
+
+The player is in the Room of the Flytrap. The player carries a delicious-looking taco. The description of the delicious-looking taco is "You snuck into this place for that taco, and you don't regret it one bit! Except for the fact that you're now stuck with a giant man-eating flytrap..."
+
+Instead of eating the delicious-looking taco:
+	say "That taco looks pretty delicious, but as you put it to your face, you get a whiff of a weird, distinctly not-taco smell. Are you sure you want to eat it?";
+	if the player consents:
+		now the taco is nowhere;
+		say "You take a bite of the taco, but it turns out it's poisoned, and you die!";
+		end the story saying "You have been poisoned by a taco";
+	otherwise:
+		say "You put the taco away and decide not to look at it again, lest your urge to eat it overcomes you."
+
+Instead of smelling the delicious-looking taco, say "You give it a whiff, expecting a smell that would make your mouth water. But there's something a bit off about the scent, that makes you not want to eat it."
+
+Instead of examining the player, say "Stop fussing about yourself. What you should really be worried about is that man-eating flytrap.[unless the number of things enclosed by the player is 0]You have [a list of things carried by the player]."
+
+Instead of attacking yourself, say "You hit yourself in the face. It stings a bit, but otherwise doesn't do much."
+
+Instead of taking yourself, say "I'd like to see you try."
+
+After asking yourself about, say "You start a conversation with yourself, but you stop after getting the feeling that you're being judged."
+
+Instead of going east in the Room of the Flytrap when the giant man-eating flytrap is dead:
+	say "You walk outside, [if the player has the flytrap's head]holding up the flytrap's head like a trophy[otherwise]embracing the sunlight bestowed upon you[end if]. You have just bested a marvelous and truly amazing creature. Now you have your whole day ahead of you to get another taco, preferably one that isn't poisoned this time.";
+	end the story finally saying "You should be proud."
+
+Chapter 2 -- The Hidden Room
+
+The Hidden Room is a room. The Hidden Room is west of the Room of the Flytrap. The description of the hidden room is "A small room with only a single, lonely-looking table covered in miscellany."
+
+The lonely-looking table is a supporter in the Hidden Room. The lonely-looking table is scenery. The description of the lonely-looking table is "The table is probably very sad since it is the only large piece of furniture in this room. It also has been forced the task of being covered with all sorts of random miscellany."
+
+The miscellany is on the table. The miscellany is scenery. Understand "junk" as the miscellany. The description of the miscellany is "Miscellaneous junk that is piled up on top of the poor, lonely-looking table."
+
+Instead of examining the miscellany, try searching the lonely-looking table.
+
+The silver dinner bell is on the lonely-looking table. The description of the silver dinner bell is "A silver bell, used for calling people for dinner.[if the beastly-looking man is nowhere] You have a sudden urge to ring it."
+
+Instead of taking the silver dinner bell, say "You try to pull it off the table but it seems to be stuck on using some sort of witchcraft."
+
+Ringing is an action with past participle rang, applying to one touchable thing. Understand "ring [something]" as ringing.
+
+Check ringing:
+	if the noun is not the silver dinner bell:
+		say "I don't know how you'd be able to ring [the noun]." instead.
+
+Report ringing: say "Ding!"
+
+Instead of ringing the bell when the beastly-looking man is nowhere and the definitely dead corpse is nowhere:
+	say "The bell lets out a satisfying [italic type]ding![roman type] and before you know it, a beastly-looking man is in the room, staring at you expectantly, with a wide grin on his face.";
+	now the beastly-looking man is in the Hidden Room.
+
+The shiny sword is on the lonely-looking table. The description of the shiny sword is "A sword that is shiny enough that you can look at your reflection in it. It's also very sharp and dangerous looking."
+
+Instead of cutting something while the player does not have the sword, say "With what?"
+
+Instead of cutting yourself while the player has the sword, say "You run the blade across your skin and it starts to bleed. And hurt. Why did you do this again?"
+
+Instead of attacking yourself while the player has the sword:
+	say "You take the sword and stab yourself in the chest, expecting a nice, clean death. You lay there for fifty minutes, painfully bleeding out. Then you die. Nice job!";
+	end the story saying "You have been stabbed by yourself".
+
+Instead of cutting something while the player has the sword, say "You lash out at [the noun], but it doesn't do very much damage."
+
+Instead of cutting the giant man-eating flytrap when the player has the sword, try attacking the giant man-eating flytrap instead.
+
+Instead of inserting the shiny sword into the sparkly birthday box, say "The box isn't big enough to fit it."
+
+The sparkly birthday box is a container on the lonely-looking table. Understand "bow" or "big bow" as the sparkly birthday box. The description of the sparkly birthday box is "A very sparkly box that reads 'Happy birthday!' and has a nice, big bow on it."
+
+The beastly-looking man is a man. The beastly-looking man is nowhere. Understand "beastly" as the beastly-looking man. The description of the beastly-looking man is "He's huge and meaty, dressed in tough-looking clothes. But something tells you he ain't so tough after all."
+
+Instead of attacking the beastly-looking man, say "I really don't think he would appreciate that."
+Instead of cutting the beastly-looking man while the player has the sword, say "I really don't think he would appreciate that."
+
+Table of the Beastly-Looking Man's Responses
+Topic	Response
+"birthday"	"'That's today, my birthday! And I want presents!'"
+"man/beastly/himself"	"'I'm me, and it's my birthday!'"
+"flytrap"	"'What's a flytrap? Is that my birthday present?'"
+"birthday box" or "box/presents"	"'I only want presents that are in a birthday box!'"
+"me"	"'You're going to give me birthday presents, aren't you?'"
+
+After asking the beastly-looking man about a topic listed in the Table of the Beastly-Looking Man's Responses, say "[response entry][paragraph break]".
+
+After asking the beastly-looking man about, say "[one of]'I want birthday presents!'[or]'Do you have my birthday present yet?'[or]'It's my birthday!'[or]'I want a big birthday present in a big birthday box!'[purely at random]"
+
+Understand "talk to [someone]" as a mistake ("To have a conversation, use ASK someone ABOUT something."). 
+
+Instead of telling someone about something, try asking the noun about it. Instead of answering the noun that something, try asking the noun about it.
+
+Instead of giving something to the beastly-looking man, say "He cocks his head in confusion. 'That's not in a birthday box!'"
+
+Instead of giving the sparkly birthday box to the beastly-looking man:
+	if the sparkly birthday box contains the taco:
+		say "'Yay! A taco!' The beastly-looking man beams and takes a huge bite out of the taco. Shortly thereafter, he dies of food poisoning.";
+		now the delicious-looking taco is nowhere;
+		now the beastly-looking man is nowhere;
+		now the definitely dead corpse is in the Hidden Room;
+	otherwise if the number of things in the sparkly birthday box is zero:
+		say "The beastly-looking man stomps his foot and throws the box. 'There's nothing inside! I want a birthday present!'";
+	otherwise:
+		say "The beastly-looking man frowns and throws the box. 'That doesn't look like a birthday present to me!'".
+
+Instead of kissing the beastly-looking man, say "He turns you away. 'I want presents, not kisses!'"
+
+The definitely dead corpse is nowhere. Understand "beastly" and "man" and "body" as the definitely dead corpse. The description of the definitely dead corpse is "You look over the body of the beastly-looking man that you killed, and to no surprise, you find that he's dead."
+
+After taking the definitely dead corpse, say "You heave the corpse over your shoulder. It's very heavy."
+
+After putting the definitely dead corpse on the comfy-looking sofa:
+	say "You drop the corpse on the sofa, and within moments, the giant man-eating flytrap swoops down and eats the corpse whole. After a few minutes of anticipation, you see the flytrap fall to the ground, dead from your poison. It opens up an exit to the east.";
+	now the definitely dead corpse is nowhere;
+	now the giant man-eating flytrap is dead.
+
+Instead of touching the definitely dead corpse, say "It feels definitely dead."
+
+Instead of giving the definitely dead corpse to the giant man-eating flytrap, say "Personally hand-feeding the flytrap sounds like a bad idea. Maybe you should put the corpse somewhere instead."
+
+Chapter 3 -- Help
+
+Abouting is an action out of world. Understand "about" as abouting. Understand "info" as abouting.
+
+Report abouting:
+	say "Welcome, friends, foes, and all else who happen upon this game. If you haven't already noticed, this game is a simple, light-hearted game about flytraps. Giant man-eating flytraps to be specific. It is intended to be a brief demo game of the interactive fiction medium, and contains one main puzzle. For more information about interactive fiction, type COMMANDS at the '>' prompt."
+
+Commanding is an action out of world. Understand "commands" as commanding.
+
+Report commanding:
+	say "This is a work of interactive fiction. As such, there are a few things to note about how to interact with and play interactive fiction. As you have likely done already, the '>' below is a prompt, in which you may type commands that will interact with the game world. Here is a fairly comprehensive list of commands that you will need to complete this game.[paragraph break]Directional commands are used for moving around. These commands include all of the cardinal directions (NORTH, SOUTH, EAST, WEST), and UP and DOWN, all of which can be abbreviated to their first letters (N, S, E, W, U, D). Other works of interactive fiction may use IN and OUT, and more specific directions such as NORTHWEST and SOUTHEAST, but these are not required for this game.[paragraph break]Two very important commands in interactive fiction are LOOK and EXAMINE. LOOK (or L) will give you a description of your location. EXAMINE (or X) [italic type]something[roman type] will give you a description of something specified -- an item, a person, yourself, etc.[paragraph break]Conversation with other characters is through an ASK/TELL system. That means you can use ASK [italic type]someone[roman type] ABOUT [italic type]something[roman type]. There is no difference between ask and tell in this game. You can also GIVE [italic type]something[roman type] TO [italic type]someone[roman type].[paragraph break]Other commands may work as well. A few examples are OPEN/CLOSE [italic type]something[roman type], EAT [italic type]something[roman type], ATTACK [italic type]something[roman type], and PUT [italic type]something[roman type] INTO [italic type]something[roman type]. There are more verbs, but I cannot list them all here. There is no harm in experimenting, and many verbs may work. If you are trying to do something and it does not work, try a synonym. Good luck."
+	
+Asking for help is an action out of world. Understand "help" as asking for help.
+
+Report asking for help:
+	say "For information on the game, type ABOUT. For information on interactive fiction, type COMMANDS. For hints or help on a puzzle, type HINTS. A walkthrough can be provided through WALKTHROUGH. To contact the author or view the credits, type CREDITS."
+
+Crediting is an action out of world. Understand "credits" as crediting.
+
+Report crediting:
+	say "This game was created by [story author] using the Inform 7 programming language by Grahmn Nelson. The extension 'Menus' by Emily Short was used. Thank you for playing, as you are my beta testers."
+
+Table of Hints
+title	subtable	description	toggle
+"What am I doing?"	Table of What Hints	""	hint toggle rule
+"How do I get rid of the flytrap?"	Table of Nope Hints	""	hint toggle rule
+"How do I get out?"	Table of Escape Hints	""	hint toggle rule
+"I'm in the other room. What now?"	Table of Hidden Room Hints	""	hint toggle rule
+"How do I deal with this person?"	Table of Beastly Man Hints	""	hint toggle rule
+"Oops. I might have done a bad."	Table of Accidents Hints	""	hint toggle rule
+"How do I get rid of the flytrap now?"	Table of Feeding Hints	""	hint toggle rule
+"What now?"	Table of Finishing Hints	""	hint toggle rule
+
+Table of What Hints
+hint	used
+"Well, you really wanted a taco, and now all you need to do is find a way to get out."	a number
+"Sadly, there happens to a giant man-eating flytrap in the way of your exit."	
+"Maybe you should try to get rid of it."	
+
+Table of Nope Hints
+hint	used
+"Well, you could attack it."	a number
+"But you might want to save your game first."	
+"You need a smarter way to kill it than that."	
+"I'd suggest you start looking around."	
+
+Table of Escape Hints
+hint	used
+"There are two exits in this room. One is to the east, but the flytrap is in the way."	a number	
+"The other is hidden within an object."	
+"Have you examined everything in the room?"	
+"Have you examined the cabinet?"	
+"Have you opened the cabinet?"	
+"If you have, you can just go west and you'll be in another room which can help you defeat the mighty flytrap."	
+
+Table of Hidden Room Hints
+hint	used
+"There isn't a whole lot in here. Have you looked at everything?"	a number
+"Are you sure?"	
+"Try playing with some of the stuff on the table."	
+"Like the bell."	
+"What do you usually do with bells?"	
+"You ring them. Try it out."	
+"RING BELL."	
+"Now you'll see somebody else here."	
+
+Table of Beastly Man Hints
+hint	used
+"He might be beastly, but he won't hurt you."	a number
+"He just wants one thing in particular."	
+"Chat with him a few times and you'll find out he wants a birthday present."	
+"What could you give him?"	
+"If you try giving him something, you'll find that he won't take it."	
+"He will tell you why he won't take it."	
+"You need to put it in a birthday box."	
+"You can find a birthday box conveniently on the table."	
+"Only one object fits in the birthday box."	
+"Your beloved taco."	
+"PUT TACO IN BOX. GIVE BOX TO MAN."	
+
+Table of Accidents Hints
+hint	used
+"Let me guess. You gave the beastly man the taco?"	a number
+"And he died?"	
+"Yeah, that taco was kind of poisoned."	
+"It's okay though now. You can probably put his dead body to good use."	
+
+Table of Feeding Hints
+hint	used
+"If you haven't tried attacking the flytrap, either with or without the sword, try that now."	a number
+"Yeah, you can't kill it directly. Maybe there's something else that can kill him?"	
+"Hm... Well its a giant man-eating flytrap."	
+"Have you seen any men around lately?"	
+"Or maybe something  that can poison the flytrap?"	
+"Oh wait a minute, what about that beastly man?"	
+"The poisoned taco sure killed him. Why couldn't the taco kill the flytrap too?"	
+"Now what? Having trouble feeding the flytrap?"	
+"Well if you look at the couch..."	
+"Or better yet, take a seat on it for a couple of turns..."	
+"You'll figure out that the flytrap eats anything on the couch."	
+"Put the man on the couch, and you'll be done with that vile flytrap!"	
+
+Table of Finishing Hints
+hint	used
+"That's a good question."	a number
+"You can go off to freedom now, to the east."	
+"Or you can try and scavenge a prize from the flytrap."	
+"Or you can just mess around. The game is over."	
+"So are the hints."	
+"You can stop now."	
+
+Asking for hints is an action out of world. Understand "hints" or "hint" as asking for hints.
+
+Carry out asking for hints:
+	 now the current menu is the Table of Hints;
+	 carry out the displaying activity;
+	 clear the screen;
+	 try looking.
+
+Walkthroughing is an action out of world. Understand "walkthrough" or "walkthru" as walkthroughing.
+
+Carry out walkthroughing:
+	say "Are you sure you want to view the full plain-text walkthrough?";
+	if the player consents:
+		say "Are you really, really, really sure?";
+		if the player consents:
+			say "Have you checked the hints for your specific problem already?";
+			if the player consents:
+				say "OPEN CABINET. W. RING BELL. PUT TACO IN BOX. GIVE BOX TO MAN. TAKE CORPSE. E. PUT CORPSE ON COUCH. E.";
+			otherwise:
+				say "Type HINTS to find relevant hints.";
+		otherwise:
+			say "Ok. If you have an issue, try looking around and/or checking the hints.";
+	otherwise:
+		say "Ok. If you have an issue, try looking around and/or checking the hints."
+
+Chapter 4 -- Misc
+
+Instead of eating something, say "Yes, because eating [the noun] sounds extremely appetizing to you."
+
+Instead of taking something that is fixed in place, say "What benefit would carrying around [the noun] be to you?"
+
+Dancing is an action applying to nothing. Understand "dance" as dancing.
+
+Carry out dancing: say "You do a few twirls like a ballerina, but trip due to a severe case of uncoordination."
+
+Singing is an action applying to nothing. Understand "sing" as singing.
+
+Carry out singing: say "You belt out a song with all of your heart, but even the great acoustics in the room can't make you sound good."
+
+Laughing is an action applying to nothing. Understand "laugh" as laughing.
+
+Carry out laughing: say "You double over laughing for no reason."
